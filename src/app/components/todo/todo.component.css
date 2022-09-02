@@ -1,0 +1,12 @@
+.todo-item {
+    background-color: #eee;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.completed {
+    background-color: #48c37f;
+}
