@@ -10,13 +10,18 @@ export class TodoComponent implements OnInit {
   
   @Input() todo!: toDo;
   @Output() toggleEvent = new EventEmitter();
+  @Output() deleteEvent = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  toggle(todo:any) {
+  toggle(todo:{}) {
     this.toggleEvent.emit(todo)
+  }
+
+  delete(todo:{}) {
+    this.deleteEvent.emit(todo)
   }
 
 }

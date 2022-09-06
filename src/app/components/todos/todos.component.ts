@@ -18,22 +18,35 @@ export class TodosComponent implements OnInit {
       completed: false
     },
   ]
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+  constructor() { }
+  ngOnInit(): void {}
+
+
   toggleToDo(data: {
     id: number,
-    text: String,
-    completed: boolean
-  }) {
+    text: string,
+    completed: boolean}
+    ) {
     
-    this.todos.forEach(task => {
-      if (task.id === data.id) task.completed = !task.completed ;
+    this.todos = this.todos.map(task => {
+      if (task.id === data.id) 
+        task.completed = !task.completed 
+      return task
+
       
     })
 
 
+  }
+  deleteToDo(todo: {id:number, text:string, completed:boolean}) {
+    this.todos = this.todos.filter(task => {
+      return task.id !== todo.id
+    })
+  }
+
+  onKeyUp(data: string) {
+    document.querySelector('.test')!.textContent = data
   }
 
 }

@@ -2,4 +2,8 @@
     *ngFor="let todo of todos"
     [todo]="todo"
     (toggleEvent)="toggleToDo($event)"
+    (deleteEvent)="deleteToDo($event)"
 ></app-todo>
+<br>
+<input type="text" #myInput>
+<div (change)="onKeyUp(myInput.value)" class="test"></div>
