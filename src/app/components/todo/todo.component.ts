@@ -16,8 +16,6 @@ export class TodoComponent implements OnInit {
   }
 
   toggle(todo:any) {
-    console.log({todo});
-    // todo.completed = !todo.completed
     this.toggleEvent.emit(todo)
   }
 

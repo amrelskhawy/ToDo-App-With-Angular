@@ -8,22 +8,32 @@ import { Component, OnInit } from '@angular/core';
 export class TodosComponent implements OnInit {
   todos = [
     {
-    id: 1,
-    text: 'First Task',
-    completed: true
+      id: 1,
+      text: 'First Task',
+      completed: true
     },
     {
       id: 2,
       text: 'Second Task',
       completed: false
     },
-]
+  ]
   constructor() { }
 
   ngOnInit(): void {
   }
-  toggleToDo($event: any) {
-    console.log($event);
+  toggleToDo(data: {
+    id: number,
+    text: String,
+    completed: boolean
+  }) {
+    
+    this.todos.forEach(task => {
+      if (task.id === data.id) task.completed = !task.completed ;
+      
+    })
+
+
   }
 
 }

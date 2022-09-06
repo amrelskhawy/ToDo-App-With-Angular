@@ -1,5 +1,5 @@
 <app-todo
-    *ngFor="let task of todos"
-    [todo]="task">
+    *ngFor="let todo of todos"
+    [todo]="todo"
     (toggleEvent)="toggleToDo($event)"
-</app-todo>
+></app-todo>
